@@ -14,9 +14,27 @@
 </head>
 
 <body>
-    <h1>Phone Store</h1>
+    <main class="container">
+        <h1 class="text-center">Phone Store</h1>
+        <!-- input field section -->
+        <div class="input-group mb-3">
+            <input id="input-field" type="text" class="form-control" placeholder="Search phone by phone name"
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button onclick="loadResult()" class="btn btn-outline-secondary" type="button"
+                id="search-button">Search</button>
+        </div>
+        <!-- show phone details -->
+        <div id="phone-details">
+
+        </div>
+        <!-- show search result section -->
+        <div id="show-result" class="row row-cols-1 row-cols-md-3 g-4">
+
+        </div>
 
 
+
+    </main>
 
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
