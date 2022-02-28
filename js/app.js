@@ -14,7 +14,7 @@ const phoneResult = phones => {
     // console.log(phones)
     const showResult = document.getElementById('show-result')
     showResult.innerHTML = ''
-    for (const phone of phones) {
+    for (const phone of phones.slice(0, 20)) {
         // console.log(phone)
 
         const div = document.createElement('div')
