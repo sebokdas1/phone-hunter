@@ -16,7 +16,7 @@ const phoneResult = phones => {
         const div = document.createElement('div')
         div.classList.add('col')
         div.innerHTML = `
-    <div class="card h-100">
+    <div class="card ">
       <img src="${phone.image}" class="card-img-top" alt="...">
       <div class="card-body text-center">
         <h5 class="card-title">${phone.phone_name}</h5>
@@ -34,6 +34,22 @@ const phoneDetail = id => {
     const url = `https://openapi.programming-hero.com/api/phone/${id}`
     fetch(url)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => singlePhone(data.data))
 
+}
+const singlePhone = single => {
+    console.log(single)
+    const phoneDetails = document.getElementById('phone-details');
+    phoneDetails.innerHTML = ''
+    phoneDetails.innerHTML = `
+    <div class="card" style="width: 18rem;">
+  <img src="${single.image}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h6 class="card-title">mainFeatures:</h6>
+    <p>chipSet: ${single.mainFeatures.chipset}</p>
+    <p>displaySize: ${single.mainFeatures.displaySize}</p>
+    <p>memory: ${single.mainFeatures.memory}</p>
+     </div>
+</div>
+    `
 }
