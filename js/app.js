@@ -1,10 +1,14 @@
 const loadResult = () => {
     const searchInput = document.getElementById('input-field');
-    const inputValue = searchInput.value;
+    const searchValue = searchInput.value;
+    const inputValue = searchValue.toLowerCase();
+    // console.log(inputValue)
+    document.getElementById('phone-details').innerHTML = ''
     const url = `https://openapi.programming-hero.com/api/phones?search=${inputValue}`
     fetch(url)
         .then(res => res.json())
         .then(data => phoneResult(data.data))
+    searchInput.value = ''
 }
 const phoneResult = phones => {
     // console.log(phones)
@@ -40,15 +44,18 @@ const phoneDetail = id => {
 const singlePhone = single => {
     console.log(single)
     const phoneDetails = document.getElementById('phone-details');
-    phoneDetails.innerHTML = ''
+
     phoneDetails.innerHTML = `
     <div class="card" style="width: 18rem;">
   <img src="${single.image}" class="card-img-top" alt="...">
   <div class="card-body">
     <h6 class="card-title">mainFeatures:</h6>
-    <p>chipSet: ${single.mainFeatures.chipset}</p>
+    <p>chipSet: ${single.mainFeatures.chipSet}</p>
     <p>displaySize: ${single.mainFeatures.displaySize}</p>
     <p>memory: ${single.mainFeatures.memory}</p>
+    <div class="card-footer text-muted">
+    ${single.releaseDate}
+  </div>
      </div>
 </div>
     `
