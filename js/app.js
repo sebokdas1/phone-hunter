@@ -10,7 +10,7 @@ const loadResult = () => {
         .then(res => res.json())
         .then(data => phoneResult(data.data))
     searchInput.value = ''
-}
+};
 
 //show search results
 const phoneResult = phones => {
@@ -32,13 +32,13 @@ const phoneResult = phones => {
       <div class="card-body text-center">
         <h5 class="card-title">${phone.phone_name}</h5>
         <h6>Brand: ${phone.brand}</h6>
-        <button onclick="phoneDetail('${phone.slug}')" class="btn bg-success text-white text-center">Details</button>
+        <a href="#phone-details"><button onclick="phoneDetail('${phone.slug}')" class="btn bg-success text-white text-center">Details</button></a>
       </div>
     </div>
-`
+`;
         showResult.appendChild(div)
     }
-}
+};
 
 //get phone id
 const phoneDetail = id => {
@@ -47,11 +47,10 @@ const phoneDetail = id => {
         .then(res => res.json())
         .then(data => singlePhones(data.data))
 
-}
+};
 
 //show single phone details
 const singlePhones = singlephone => {
-    console.log(singlephone)
     //apply not found condition
     if (singlephone.releaseDate == '') {
         singlephone.releaseDate = 'no release date found'
@@ -87,4 +86,4 @@ const singlePhones = singlephone => {
    </div>
 </div>
     `;
-}
+};
