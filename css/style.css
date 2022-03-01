@@ -7,6 +7,9 @@ body{
 #store-name{
     color: darkblue;
 }
+#spinner{
+    display: none;
+}
 
 /* main property styled */
 .main-property{

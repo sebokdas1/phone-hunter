@@ -5,6 +5,8 @@ const loadResult = () => {
     const inputValue = searchValue.toLowerCase();
 
     document.getElementById('phone-details').innerHTML = ''
+    //add spinner
+    document.getElementById('spinner').style.display = "block"
     const url = `https://openapi.programming-hero.com/api/phones?search=${inputValue}`
     fetch(url)
         .then(res => res.json())
@@ -14,6 +16,8 @@ const loadResult = () => {
 
 //show search results
 const phoneResult = phones => {
+    //remove spinner
+    document.getElementById('spinner').style.display = "none"
     if (phones.length == 0) {
         document.getElementById('no-result').style.display = 'block';
     } else {
