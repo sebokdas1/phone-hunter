@@ -14,6 +14,11 @@ const loadResult = () => {
 
 //show search results
 const phoneResult = phones => {
+    if (phones.length == 0) {
+        document.getElementById('no-result').style.display = 'block';
+    } else {
+        document.getElementById('no-result').style.display = 'none';
+    }
     const showResult = document.getElementById('show-result')
     //clear previous result
     showResult.innerHTML = ''
@@ -46,23 +51,36 @@ const phoneDetail = id => {
 
 //show single phone details
 const singlePhones = singlephone => {
+    console.log(singlephone)
     //apply not found condition
     if (singlephone.releaseDate == '') {
         singlephone.releaseDate = 'no release date found'
     }
+
     const phoneDetails = document.getElementById('phone-details');
     phoneDetails.innerHTML = `
-    <div class="card" style="width: 18rem;">
-  <img src="${singlephone.image}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h6 class="card-title">mainFeatures:</h6>
-    <p>chipSet: ${singlephone.mainFeatures.chipSet}</p>
-    <p>displaySize: ${singlephone.mainFeatures.displaySize}</p>
-    <p>memory: ${singlephone.mainFeatures.memory}</p>
-    <div class="card-footer text-muted">
+    <div class="card d-md-flex flex-row mx-auto mb-3">
+  <div><img src="${singlephone.image}" class="card-img-top" alt="...">
+  <div class="card-footer text-center text-muted">
     ${singlephone.releaseDate}
-  </div>
-     </div>
+  </div></div>
+  <div class="card-body">
+    <h4 class="card-title class="main-property"">mainFeatures:</h4>
+    <p><span class="property">chipSet: </span>${singlephone.mainFeatures.chipSet}</p>
+    <p><span class="property">displaySize: </span>${singlephone.mainFeatures.displaySize}</p>
+    <p><span class="property">memory: </span>${singlephone.mainFeatures.memory}</p>
+    
+    <h4 class="main-property">Sensonr:</h4>
+    <p>${singlephone.mainFeatures?.sensors?.join(', ')}</p>
+    </div>
+    <div>
+    <h4 class="main-property">Others:</h4>
+    <p><span class="property">Bluetooth: </span>${singlephone?.others?.Bluetooth}</p>
+    <p><span class="property">GPS: </span>${singlephone?.others?.GPS}</p>
+    <p><span class="property">NFC: </span>${singlephone?.others?.NFC}</p>
+    <p><span class="property">USB: </span>${singlephone?.others?.USB}</p>
+    <p><span class="property">WLAN: </span>${singlephone?.others?.WLAN}</p>
+   </div>
 </div>
     `;
 }

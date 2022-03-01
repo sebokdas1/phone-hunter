@@ -1,0 +1,13 @@
+.main-property{
+    font-weight: 700;
+}
+.property{
+    font-weight: 600;
+}
+#no-result{
+    display: none;
+}
+.err-msg{
+    background-color: rgba(169, 169, 169, 0.301);
+    font-size: 18px;
+}
