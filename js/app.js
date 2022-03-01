@@ -59,18 +59,22 @@ const singlePhones = singlephone => {
 
     const phoneDetails = document.getElementById('phone-details');
     phoneDetails.innerHTML = `
-    <div class="card d-md-flex flex-row mx-auto mb-3">
-  <div><img src="${singlephone.image}" class="card-img-top" alt="...">
+    <div class="card d-flex flex-md-row mx-auto mb-3">
+  <div>
+  <img src="${singlephone.image}" class="card-img-top" alt="...">
+  <h5 class="text-center">${singlephone.name}</h5>
   <div class="card-footer text-center text-muted">
     ${singlephone.releaseDate}
-  </div></div>
+  </div>
+  </div>
   <div class="card-body">
-    <h4 class="card-title class="main-property"">mainFeatures:</h4>
-    <p><span class="property">chipSet: </span>${singlephone.mainFeatures.chipSet}</p>
-    <p><span class="property">displaySize: </span>${singlephone.mainFeatures.displaySize}</p>
-    <p><span class="property">memory: </span>${singlephone.mainFeatures.memory}</p>
+    <h4 class="card-title class="main-property"">Main Features:</h4>
+    <p><span class="property">Chip Set: </span>${singlephone.mainFeatures.chipSet}</p>
+    <p><span class="property">Display Size: </span>${singlephone.mainFeatures.displaySize}</p>
+    <p><span class="property">Memory: </span>${singlephone.mainFeatures.memory}</p>
+    <p><span class="property">Storage: </span>${singlephone.mainFeatures.storage}</p>
     
-    <h4 class="main-property">Sensonr:</h4>
+    <h4 class="main-property">Sensor:</h4>
     <p>${singlephone.mainFeatures?.sensors?.join(', ')}</p>
     </div>
     <div>

@@ -15,7 +15,8 @@
 
 <body>
     <main class="container">
-        <h1 class="text-center">Phone Store</h1>
+        <h1 id="store-name" class="text-center">Phone Store</h1>
+
         <!-- input field section -->
         <div class="input-group mb-3">
             <input id="input-field" type="text" class="form-control" placeholder="Search phone by phone name"
@@ -23,20 +24,19 @@
             <button onclick="loadResult()" class="btn btn-outline-secondary" type="button"
                 id="search-button">Search</button>
         </div>
+
+        <!-- Error massage added -->
         <div id="no-result">
             <p class="text-center text-danger err-msg">Sorry! no result found</p>
         </div>
+
         <!-- show phone details -->
         <div id="phone-details" class="">
-
         </div>
+
         <!-- show search result section -->
         <div id="show-result" class="row row-cols-1 row-cols-md-3 g-4">
-
         </div>
-
-
-
     </main>
 
     <!-- bootstrap js -->

@@ -1,6 +1,18 @@
+/* body backgroung color added */
+body{
+    background-color: rgba(245, 245, 245, 0.349);
+}
+
+/* header style added */
+#store-name{
+    color: darkblue;
+}
+
+/* main property styled */
 .main-property{
     font-weight: 700;
 }
+/* all property font size added */
 .property{
     font-weight: 600;
 }
